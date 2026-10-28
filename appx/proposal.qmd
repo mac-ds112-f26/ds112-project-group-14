@@ -1,5 +1,81 @@
+
 ---
-title: "Proposal"
+title: "Pets and Babies: Comparing Popular Names"
 ---
 
-Your proposal go here.
+## Team Members
+
+- Kristen Wang
+- Jiwei Liu
+- Xiwen (Blair) Chang
+
+## Project Description
+
+This project explores the popularity of cat and dog names in Seattle and compares them with popular baby names in the United States. We aim to identify similarities and differences in naming patterns across pets and babies, including whether certain names are popular in both groups. By analyzing and visualizing naming data, we hope to better understand how naming preferences vary between pets and humans.
+
+## Research Questions
+
+1. What are the similarities and differences between the most popular cat and dog names in Seattle and baby names in the United States?
+
+2. To what extent do naming preferences differ between cats and dogs, and how do these patterns compare with those of human babies?
+
+3. How have popular pet and baby names changed over time, and are there any common trends in naming preferences?
+
+## Motivation
+
+We chose this topic because we are interested in how people choose names for their pets and children. Many pets have traditionally human names, which made us curious about whether popular cat and dog names overlap with popular baby names. We also wanted to explore whether naming preferences differ between cats and dogs.
+
+By comparing these naming patterns, we hope to better understand the similarities and differences in how people name their pets and children. This topic also provides an opportunity to work with real-world datasets and explore interesting patterns through data visualization.
+
+## Potential Datasets
+
+We plan to use two publicly available datasets for our project.
+
+### 1. Seattle Pets Dataset
+
+This dataset contains 52,519 pet registration records from Seattle between 2003 and 2018, including pet names, species, breeds, and license issue dates.
+
+We will use this dataset to identify the most popular cat and dog names and compare naming preferences between the two species.
+
+**Source:** [OpenIntro Seattle Pets Dataset](https://www.openintro.org/data/index.php?data=seattlepets)
+
+### 2. U.S. Baby Names Dataset
+
+This dataset, provided by the Social Security Administration (SSA), includes baby names, birth years, sex, and the number of births associated with each name.
+
+We will use this dataset to identify popular baby names and compare them with pet names.
+
+**Source:** [Social Security Administration](https://www.ssa.gov/oact/babynames/limits.html)
+
+By combining these datasets, we hope to explore similarities and differences in naming preferences among cats, dogs, and babies. We also plan to use data visualization to identify popular names and examine naming trends over time.
+
+## Communication Plan
+
+*To be discussed and finalized by the team.*
+
+- **Primary communication channel:** Wechat
+- **Expected response time:** Within 24 hours on weekdays
+- **Regular meeting time:** Saturday afternoon
+
+## Team Roles
+
+- **Point of Contact:** Jiwei Liu
+- **Technical Lead:** Kristen Wang
+- **Style Lead:** Xiwen (Blair) Chang
+
+All team members will contribute to data collection, analysis, visualization, and writing.
+
+## Conflict Resolution
+
+If a team member is unable to meet a deadline, they should inform the group as early as possible so that tasks can be adjusted. If disagreements arise, we will discuss different perspectives and try to reach a consensus. If a decision cannot be reached, we will use a majority vote.
+
+## Implementation Plan
+
+*The following tasks and deadlines will be finalized by the team and tracked using GitHub Issues.*
+
+1. **Finalize research questions and datasets:** Confirm the project scope and identify suitable data sources.
+2. **Data collection and cleaning:** Download, import, and prepare the datasets for analysis.
+3. **Exploratory data analysis:** Examine naming frequencies and identify initial patterns.
+4. **Data visualization:** Create visualizations comparing pet names and baby names.
+5. **Interpretation and report writing:** Summarize findings, limitations, and conclusions.
+6. **Final review and submission:** Review code, formatting, and project website before submission.
