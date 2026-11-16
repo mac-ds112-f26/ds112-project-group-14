@@ -1,0 +1,243 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Project Title",
+    "section": "",
+    "text": "Your report goes here.\n\nCode# a test code chunk",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Report</span>"
+    ]
+  },
+  {
+    "objectID": "eda/eda-member1.html",
+    "href": "eda/eda-member1.html",
+    "title": "Member 1 First Name & Last Name Initial",
+    "section": "",
+    "text": "Your exploratory data analysis of the team datasets go here.",
+    "crumbs": [
+      "EDA",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Member 1 First Name & Last Name Initial</span>"
+    ]
+  },
+  {
+    "objectID": "eda/eda-member2.html",
+    "href": "eda/eda-member2.html",
+    "title": "Member 2 First Name & Last Name Initial",
+    "section": "",
+    "text": "Your exploratory data analysis of the team datasets go here.",
+    "crumbs": [
+      "EDA",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Member 2 First Name & Last Name Initial</span>"
+    ]
+  },
+  {
+    "objectID": "eda/eda-member3.html",
+    "href": "eda/eda-member3.html",
+    "title": "Member 3 First Name & Last Name Initial",
+    "section": "",
+    "text": "Your exploratory data analysis of the team datasets go here.",
+    "crumbs": [
+      "EDA",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Member 3 First Name & Last Name Initial</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html",
+    "href": "appx/proposal.html",
+    "title": "Appendix A — Pets and Babies: Comparing Popular Names",
+    "section": "",
+    "text": "Team Members",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Pets and Babies: Comparing Popular Names</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html#team-members",
+    "href": "appx/proposal.html#team-members",
+    "title": "Appendix A — Pets and Babies: Comparing Popular Names",
+    "section": "",
+    "text": "Kristen Wang\nJiwei Liu\nXiwen (Blair) Chang",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Pets and Babies: Comparing Popular Names</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html#project-description",
+    "href": "appx/proposal.html#project-description",
+    "title": "Appendix A — Pets and Babies: Comparing Popular Names",
+    "section": "Project Description",
+    "text": "Project Description\nThis project explores the popularity of cat and dog names in Seattle and compares them with popular baby names in the United States. We aim to identify similarities and differences in naming patterns across pets and babies, including whether certain names are popular in both groups. By analyzing and visualizing naming data, we hope to better understand how naming preferences vary between pets and humans.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Pets and Babies: Comparing Popular Names</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html#research-questions",
+    "href": "appx/proposal.html#research-questions",
+    "title": "Appendix A — Pets and Babies: Comparing Popular Names",
+    "section": "Research Questions",
+    "text": "Research Questions\n\nWhat are the similarities and differences between the most popular cat and dog names in Seattle and baby names in the United States?\nTo what extent do naming preferences differ between cats and dogs, and how do these patterns compare with those of human babies?\nHow have popular pet and baby names changed over time, and are there any common trends in naming preferences?",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Pets and Babies: Comparing Popular Names</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html#motivation",
+    "href": "appx/proposal.html#motivation",
+    "title": "Appendix A — Pets and Babies: Comparing Popular Names",
+    "section": "Motivation",
+    "text": "Motivation\nWe chose this topic because we are interested in how people choose names for their pets and children. Many pets have traditionally human names, which made us curious about whether popular cat and dog names overlap with popular baby names. We also wanted to explore whether naming preferences differ between cats and dogs.\nBy comparing these naming patterns, we hope to better understand the similarities and differences in how people name their pets and children. This topic also provides an opportunity to work with real-world datasets and explore interesting patterns through data visualization.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Pets and Babies: Comparing Popular Names</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html#potential-datasets",
+    "href": "appx/proposal.html#potential-datasets",
+    "title": "Appendix A — Pets and Babies: Comparing Popular Names",
+    "section": "Potential Datasets",
+    "text": "Potential Datasets\nWe plan to use two publicly available datasets for our project.\n\n1. Seattle Pets Dataset\nThis dataset contains 52,519 pet registration records from Seattle between 2003 and 2018, including pet names, species, breeds, and license issue dates.\nWe will use this dataset to identify the most popular cat and dog names and compare naming preferences between the two species.\nSource: OpenIntro Seattle Pets Dataset\n\n\n2. U.S. Baby Names Dataset\nThis dataset, provided by the Social Security Administration (SSA), includes baby names, birth years, sex, and the number of births associated with each name.\nWe will use this dataset to identify popular baby names and compare them with pet names.\nSource: Social Security Administration\nBy combining these datasets, we hope to explore similarities and differences in naming preferences among cats, dogs, and babies. We also plan to use data visualization to identify popular names and examine naming trends over time.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Pets and Babies: Comparing Popular Names</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html#communication-plan",
+    "href": "appx/proposal.html#communication-plan",
+    "title": "Appendix A — Pets and Babies: Comparing Popular Names",
+    "section": "Communication Plan",
+    "text": "Communication Plan\nTo be discussed and finalized by the team.\n\nPrimary communication channel: Wechat\nExpected response time: Within 24 hours on weekdays\nRegular meeting time: Saturday afternoon",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Pets and Babies: Comparing Popular Names</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html#team-roles",
+    "href": "appx/proposal.html#team-roles",
+    "title": "Appendix A — Pets and Babies: Comparing Popular Names",
+    "section": "Team Roles",
+    "text": "Team Roles\n\nPoint of Contact: Jiwei Liu\nTechnical Lead: Kristen Wang\nStyle Lead: Xiwen (Blair) Chang\n\nAll team members will contribute to data collection, analysis, visualization, and writing.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Pets and Babies: Comparing Popular Names</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html#conflict-resolution",
+    "href": "appx/proposal.html#conflict-resolution",
+    "title": "Appendix A — Pets and Babies: Comparing Popular Names",
+    "section": "Conflict Resolution",
+    "text": "Conflict Resolution\nIf a team member is unable to meet a deadline, they should inform the group as early as possible so that tasks can be adjusted. If disagreements arise, we will discuss different perspectives and try to reach a consensus. If a decision cannot be reached, we will use a majority vote.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Pets and Babies: Comparing Popular Names</span>"
+    ]
+  },
+  {
+    "objectID": "appx/proposal.html#implementation-plan",
+    "href": "appx/proposal.html#implementation-plan",
+    "title": "Appendix A — Pets and Babies: Comparing Popular Names",
+    "section": "Implementation Plan",
+    "text": "Implementation Plan\nThe following tasks and deadlines will be finalized by the team and tracked using GitHub Issues.\n\nFinalize research questions and datasets: Confirm the project scope and identify suitable data sources.\nData collection and cleaning: Download, import, and prepare the datasets for analysis.\nExploratory data analysis: Examine naming frequencies and identify initial patterns.\nData visualization: Create visualizations comparing pet names and baby names.\nInterpretation and report writing: Summarize findings, limitations, and conclusions.\nFinal review and submission: Review code, formatting, and project website before submission.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Pets and Babies: Comparing Popular Names</span>"
+    ]
+  },
+  {
+    "objectID": "appx/case-study.html",
+    "href": "appx/case-study.html",
+    "title": "Appendix B — Milestone 3: Case Study",
+    "section": "",
+    "text": "Article Information\nTitle: How News Media Covers Trump & Clinton\nAuthor: Russell Samora\nSource: The Pudding (2017)\nLink: https://pudding.cool/2017/03/elections/",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Milestone 3: Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "appx/case-study.html#overview",
+    "href": "appx/case-study.html#overview",
+    "title": "Appendix B — Milestone 3: Case Study",
+    "section": "1. Overview",
+    "text": "1. Overview\nThis article examines how major U.S. news organizations used images of Donald Trump and Hillary Clinton in their Facebook posts during the 2016 presidential election.\nThe author analyzed approximately 115,000 Facebook posts from 53 news organizations, including more than 12,000 posts featuring images of one or both candidates.\nThe article explores three main questions:\n\nHow frequently did Trump and Clinton appear in news media posts?\nHow did audiences engage with posts featuring each candidate?\nHow did coverage differ across news organizations?",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Milestone 3: Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "appx/case-study.html#data-story-structure",
+    "href": "appx/case-study.html#data-story-structure",
+    "title": "Appendix B — Milestone 3: Case Study",
+    "section": "2. Data Story Structure",
+    "text": "2. Data Story Structure\nThe article develops its story by moving from a broad overview of media coverage to more specific comparisons.\n\n2.1: Introducing the Problem\nThe author begins by explaining the importance of images in attracting attention on social media. This introduction establishes why comparing images of presidential candidates matters and motivates the reader to explore the data.\n\n\n2.2:Revealing the Main Pattern\nThe story first examines how frequently each candidate appears in news media images.\nUsing a stacked area chart, the author compares the percentage of posts featuring Trump, Clinton, or both over time. Major political events, such as presidential debates, are highlighted to provide context for changes in coverage.\nThe first major finding is that Trump appears more than twice as frequently as Clinton.\nThis establishes the main pattern and leads readers to wonder whether greater media attention also corresponds to greater audience engagement.\n\n\n2.3 Exploring Audience Engagement\nAfter examining how frequently the candidates appear, the author shifts the focus to how audiences respond to these posts.\nThe article compares the number of shares received by candidate-related posts with the average number of shares received by each news organization’s posts.\nThis transition moves the story beyond media coverage frequency and introduces another dimension: audience engagement.\n\n\n2.4 Comparing News Organizations\nThe author then moves from overall trends to comparisons across individual news organizations.\nBy examining differences in coverage and engagement among news outlets, the article shows that media organizations do not all portray or feature the candidates in the same way.\nThe article also presents actual images from news posts, allowing readers to observe differences in visual representation.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Milestone 3: Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "appx/case-study.html#how-visualizations-support-the-story",
+    "href": "appx/case-study.html#how-visualizations-support-the-story",
+    "title": "Appendix B — Milestone 3: Case Study",
+    "section": "3. How Visualizations Support the Story",
+    "text": "3. How Visualizations Support the Story\nThe article uses different types of visualizations to make complex data easier to understand. Rather than simply presenting numbers, the author uses chats, colors and real image to guide the readers through the story .\n\n3.1 Stacked Area Chart\nThe author uses a stacked area chart to show the percentage of Facebook posts featuring Trump, Clinton, or both throughtout the election period.\nThis chart allows readers to observe how median coverage change over time. Annotations highlights major political events, such as presidential debates, helping readers connect peaks in the data to real world events.\nHowever, stacked area chart can make comparisons difficult because the categories do not share the same baseline. For example, the blue area representing Clinton may initially appear larger even when Trump’s share is higher. Readers need to compare the thickness of each area rather than the height of its upper boundary.\n\n\n3.2 Paired Dot Plot\nThe paired dot plot then shifts the focus from what news outlets posted to what readers shared. Each row connects two dots for the same outlet, making it easy to see which candidate’s posts received more shares and how large the gap was. The gap favors Trump at UPROXX and Clinton at Newsday. Keeping the same colors for both candidates helps readers follow the comparison as the article moves from coverage to audience response.\n\n\n3.3 Real Images\nThe article also includes actual images from Facebook posts to illustrate how news organizations visually represented the two candidates.\nThese examples connect the numerical findings to real media content.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Milestone 3: Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "appx/case-study.html#what-we-learned",
+    "href": "appx/case-study.html#what-we-learned",
+    "title": "Appendix B — Milestone 3: Case Study",
+    "section": "4. What we learned",
+    "text": "4. What we learned\nThe article shows how one finding can lead to the next question. After showing how often each candidate appeared in Facebook posts, the author asks how often readers shared those posts. We can use a similar sequence in our hotel cancellation project. We can start with the overall cancellation rate, then look at how it varies with booking lead time, and finally compare that relationship between city and resort hotels.\nThe article also shows how consistent colors and annotations help readers follow a story across charts. We can use the same color for each hotel type throughout the report and label any lead-time ranges where the cancellation rates differ noticeably. We can also define booking lead time as the number of days between booking and the scheduled arrival date so readers know how to interpret the horizontal axis.\nThe stacked area chart makes peaks in overall coverage easy to see, but its upper bands are harder to compare because they start from different baselines. Since our goal is to compare cancellation rates at the same lead times, we can plot city and resort hotels as",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Milestone 3: Case Study</span>"
+    ]
+  },
+  {
+    "objectID": "wa/wa-member1.html",
+    "href": "wa/wa-member1.html",
+    "title": "Appendix C — Member 1 First Name & Last Name Initial",
+    "section": "",
+    "text": "Work area to try code",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Member 1 First Name & Last Name Initial</span>"
+    ]
+  },
+  {
+    "objectID": "wa/wa-member2.html",
+    "href": "wa/wa-member2.html",
+    "title": "Appendix D — Member 2 First Name & Last Name Initial",
+    "section": "",
+    "text": "Work area to try code",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Member 2 First Name & Last Name Initial</span>"
+    ]
+  },
+  {
+    "objectID": "wa/wa-member3.html",
+    "href": "wa/wa-member3.html",
+    "title": "Appendix E — Member 3 First Name & Last Name Initial",
+    "section": "",
+    "text": "Work area to try code",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Member 3 First Name & Last Name Initial</span>"
+    ]
+  }
+]
