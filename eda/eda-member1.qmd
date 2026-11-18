@@ -1,5 +1,123 @@
 ---
-title: "Member 1 First Name & Last Name Initial"
+title: "Member 1 KW"
 ---
 
-Your exploratory data analysis of the team datasets go here.
+## Introduction
+
+Our project's research question is: How do popular cat and dog names in Seattle compare with U.S. baby names?
+
+For my individual exploratory data analysis, I focus on the Seattle Pets dataset. I examine data quality, species distribution, and popular naming patterns among cats and dogs. This analysis will provide a foundation for our subsequent comparison with U.S. baby names.
+
+## Load Packages and Data
+
+```{r}
+library(tidyverse)
+
+pets <- read_csv(
+  "https://www.openintro.org/data/csv/seattlepets.csv"
+)
+```
+## Data Overview
+
+First, I examine the structure of the dataset to understand its size, variables, and data types.
+
+```{r}
+glimpse(pets)
+
+dim(pets)
+```
+## Missing Values and Data Cleaning
+
+Before exploring naming patterns, I examine missing values to identify potential data quality issues.
+
+```{r}
+pets |>
+  summarize(across(everything(), ~ sum(is.na(.)))) |>
+  pivot_longer(
+    everything(),
+    names_to = "variable",
+    values_to = "missing_count"
+  ) |>
+  arrange(desc(missing_count))
+```
+
+Since our project focuses on cats and dogs, I retain only these two species and remove records with missing or empty animal names. I also standardize capitalization and whitespace to ensure that names with different formatting are counted consistently.
+
+```{r}
+pets_clean <- pets |>
+  filter(species %in% c("Cat", "Dog")) |>
+  mutate(animal_name = str_squish(str_to_lower(animal_name))) |>
+  filter(!is.na(animal_name), animal_name != "")
+```
+## Distribution of Pet Species
+
+I first examine the distribution of cats and dogs to understand whether the two groups are equally represented in the dataset.
+
+```{r}
+pets_clean |>
+  count(species) |>
+  mutate(proportion = n / sum(n))
+```
+
+```{r}
+ggplot(pets_clean, aes(x = species, fill = species)) +
+  geom_bar() +
+  labs(
+    title = "Distribution of Pet Species",
+    x = "Species",
+    y = "Number of Registration Records"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+## Most Popular Pet Names
+
+To explore general naming patterns, I identify the ten most frequently occurring pet names in the dataset.
+
+```{r}
+top_names <- pets_clean |>
+  count(animal_name, sort = TRUE) |>
+  slice_head(n = 10)
+
+ggplot(top_names, aes(x = reorder(animal_name, n), y = n)) +
+  geom_col(fill = "pink", color = "lightblue") +
+  coord_flip() +
+  labs(
+    title = "Top 10 Most Popular Pet Names",
+    x = "Pet Name",
+    y = "Frequency"
+  ) +
+  theme_minimal()
+```
+## Comparison of Cat and Dog Names
+
+To explore whether naming preferences differ between cats and dogs, I examine the ten most popular names within each species. I use proportions instead of raw counts because the two species may have different sample sizes.
+
+```{r}
+pets_clean |>
+  count(species, animal_name) |>
+  group_by(species) |>
+  mutate(proportion = n / sum(n)) |>
+  slice_max(n, n = 10, with_ties = FALSE) |>
+  ungroup() |>
+  ggplot(aes(x = reorder(animal_name, proportion),
+             y = proportion,
+             fill = species)) +
+  geom_col() +
+  coord_flip() +
+  facet_wrap(~ species, scales = "free_y") +
+  scale_y_continuous(labels = scales::label_percent()) +
+  labs(
+    title = "Most Popular Names for Cats and Dogs",
+    x = "Pet Name",
+    y = "Proportion"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+## Limitations and Next Steps
+
+The dataset only includes registered pets in Seattle, which may not represent all pets in Seattle or across the United States. Differences in geographic coverage, time periods, and data collection methods should also be considered when comparing pet names with U.S. baby names.
+
+In the next stage of our project, we will compare popular cat and dog names with U.S. baby names to identify similarities and differences in naming preferences.
