@@ -1,5 +1,145 @@
 ---
-title: "Member 3 First Name & Last Name Initial"
+title: "Member 3 BC"
 ---
 
-Your exploratory data analysis of the team datasets go here.
+
+## U.S. Baby Name Ranking Changes, 2021–2025
+
+**Research question:** How did the popularity rankings of U.S. baby names change from 2021 to 2025, and were these changes different for girls and boys?
+
+I use the national baby name data published by the [U.S. Social Security Administration](https://www.ssa.gov/oact/babynames/limits.html). Each row records a name, recorded sex, and number of births in a given year. I focus on 2021–2025, which contains 158,942 records in the supplied files. Unlike an analysis that combines counts across sexes, I rank girls' and boys' names separately to examine whether their popularity patterns differ.
+
+```{r}
+library(tidyverse)
+
+baby_names <- map(2021:2025, function(year) {
+  read_csv(
+    paste0("../data/names/yob", year, ".txt"),
+    col_names = c("name", "sex", "births"),
+    col_types = "cci"
+  ) |>
+    mutate(year = year)
+}) |>
+  list_rbind()
+
+glimpse(baby_names)
+
+baby_names |>
+  count(year, sex, name = "number_of_records")
+```
+
+## Ranking Names Within Each Year and Sex
+
+I sort names by their birth counts within each year and recorded sex. A rank of 1 indicates the most frequently reported name for that group. For ties, I use alphabetical order to keep the ranking reproducible.
+
+```{r}
+ranked_names <- baby_names |>
+  group_by(year, sex) |>
+  arrange(desc(births), name, .by_group = TRUE) |>
+  mutate(rank = row_number()) |>
+  ungroup()
+
+top10_by_year <- ranked_names |>
+  filter(rank <= 10)
+
+top10_by_year |>
+  filter(year %in% c(2021, 2025)) |>
+  select(year, sex, rank, name, births) |>
+  arrange(sex, year, rank)
+```
+
+## How Many Top Names Remained Popular?
+
+I compare the names appearing in the top 10 and top 100 in 2021 with those in 2025. I calculate the number shared between the two years separately for girls and boys.
+
+```{r}
+overlap_summary <- expand_grid(sex = c("F", "M"), top_n = c(10, 100)) |>
+  mutate(shared_names = map2_int(sex, top_n, function(s, n) {
+    first_year <- ranked_names |>
+      filter(year == 2021, sex == s, rank <= n) |>
+      pull(name)
+    last_year <- ranked_names |>
+      filter(year == 2025, sex == s, rank <= n) |>
+      pull(name)
+    length(intersect(first_year, last_year))
+  })) |>
+  mutate(percent_shared = 100 * shared_names / top_n,
+         sex = recode(sex, F = "Girls", M = "Boys"))
+
+overlap_summary
+```
+
+```{r}
+ggplot(overlap_summary,
+       aes(x = sex, y = percent_shared, fill = sex)) +
+  geom_col(width = 0.6, show.legend = FALSE) +
+  geom_text(aes(label = paste0(shared_names, " of ", top_n)),
+            vjust = -0.5) +
+  facet_wrap(~ top_n, labeller = labeller(top_n = c(`10` = "Top 10", `100` = "Top 100"))) +
+  scale_y_continuous(limits = c(0, 105), breaks = seq(0, 100, 20)) +
+  scale_fill_manual(values = c("Girls" = "#C75683", "Boys" = "#438C9E")) +
+  labs(
+    title = "Most Popular Baby Names Remained on the Lists",
+    subtitle = "Names shared by the 2021 and 2025 rankings",
+    x = NULL,
+    y = "Percent of names shared (%)"
+  ) +
+  theme_minimal()
+```
+
+For the top 10, girls shared **8 of 10 names (80%)** between 2021 and 2025, while boys shared **9 of 10 names (90%)**. For the top 100, girls shared **79 names (79%)** and boys shared **84 names (84%)**. Thus, boys' lists were slightly more stable by this measure in both comparisons. These percentages describe overlap between the two endpoint years; they do not establish whether a name stayed in the top group every intervening year.
+
+## How Did the 2021 Top 10 Rankings Move by 2025?
+
+Even names that remain popular can change position. I track the 2021 top 10 girls' and boys' names to their rankings in 2025. Each line in the plot connects the same name across the two years. Because rank 1 is the most popular, a line moving upward indicates an improvement in rank.
+
+```{r}
+rank_changes <- ranked_names |>
+  filter(year == 2021, rank <= 10) |>
+  select(sex, name, rank_2021 = rank) |>
+  left_join(
+    ranked_names |>
+      filter(year == 2025) |>
+      select(sex, name, rank_2025 = rank),
+    by = c("sex", "name")
+  ) |>
+  mutate(sex = recode(sex, F = "Girls", M = "Boys"),
+         rank_change = rank_2025 - rank_2021)
+
+rank_changes |>
+  arrange(sex, rank_2021)
+```
+
+```{r}
+rank_changes_long <- rank_changes |>
+  pivot_longer(
+    cols = c(rank_2021, rank_2025),
+    names_to = "year",
+    values_to = "rank"
+  ) |>
+  mutate(year = if_else(year == "rank_2021", 2021, 2025))
+
+ggplot(rank_changes_long,
+       aes(x = year, y = rank, color = name, group = name)) +
+  geom_line() +
+  geom_point(size = 3) +
+  facet_wrap(~ sex) +
+  scale_x_continuous(breaks = c(2021, 2025)) +
+  scale_y_reverse() +
+  labs(
+    title = "Rank Changes for the 2021 Top 10 Names",
+    subtitle = "Each line connects a name's rank in 2021 and 2025",
+    x = "Year",
+    y = "Rank (1 = most popular)",
+    color = "Baby Name"
+  ) +
+  theme_minimal()
+```
+
+Olivia remained the top-ranked girls' name in both 2021 and 2025, and Liam remained the top-ranked boys' name. Some names moved despite remaining relatively popular: Ava moved from rank 5 to rank 11 among girls, while Theodore moved from rank 10 to rank 4 among boys. This shows why overlap alone does not capture every change in popularity.
+
+## Limitations and Next Steps
+
+This analysis uses SSA birth-name records, not the entire U.S. population. The files reflect recorded sex categories (F and M), and the results depend on the selected years and the top-10/top-100 cutoffs. Ranking by raw birth counts measures popularity within each year and sex, but it does not show changes in each name's share of births. Also, comparing 2021 with 2025 does not capture every year-to-year fluctuation.
+
+For the group project, we can use the SSA data to create a national baby-name reference list for 2021–2025. We can then compare the percentages of registered Seattle cats and dogs whose names appear on that list. This EDA suggests that we should decide whether to combine or separate names by sex and whether to compare name presence or popularity ranks before interpreting similarities between pet names and baby names.

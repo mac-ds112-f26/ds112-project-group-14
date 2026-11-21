@@ -1,5 +1,95 @@
 ---
-title: "Case Study"
+title: "Milestone 3: Case Study"
+subtitle: "How News Media Covers Trump & Clinton"
+format: html
 ---
 
-Your case study go here.
+## Article Information
+
+**Title:** How News Media Covers Trump & Clinton
+
+**Author:** Russell Samora
+
+**Source:** The Pudding (2017)
+
+**Link:** https://pudding.cool/2017/03/elections/
+
+## 1. Overview
+
+This article examines how major U.S. news organizations used images of Donald Trump and Hillary Clinton in their Facebook posts during the 2016 presidential election.
+
+The author analyzed approximately 115,000 Facebook posts from 53 news organizations, including more than 12,000 posts featuring images of one or both candidates.
+
+The article explores three main questions:
+
+- How frequently did Trump and Clinton appear in news media posts?
+- How did audiences engage with posts featuring each candidate?
+- How did coverage differ across news organizations?
+
+## 2. Data Story Structure
+
+The article develops its story by moving from a broad overview of media coverage to more specific comparisons.
+
+### 2.1: Introducing the Problem
+
+The author begins by explaining the importance of images in attracting attention on social media.
+This introduction establishes why comparing images of presidential candidates matters and motivates the reader to explore the data.
+
+### 2.2:Revealing the Main Pattern
+
+The story first examines how frequently each candidate appears in news media images.
+
+Using a stacked area chart, the author compares the percentage of posts featuring Trump, Clinton, or both over time. Major political events, such as presidential debates, are highlighted to provide context for changes in coverage.
+
+The first major finding is that Trump appears more than twice as frequently as Clinton.
+
+This establishes the main pattern and leads readers to wonder whether greater media attention also corresponds to greater audience engagement.
+
+### 2.3 Exploring Audience Engagement
+
+After examining how frequently the candidates appear, the author shifts the focus to how audiences respond to these posts.
+
+The article compares the number of shares received by candidate-related posts with the average number of shares received by each news organization's posts.
+
+This transition moves the story beyond media coverage frequency and introduces another dimension: audience engagement.
+
+### 2.4 Comparing News Organizations
+
+The author then moves from overall trends to comparisons across individual news organizations.
+
+By examining differences in coverage and engagement among news outlets, the article shows that media organizations do not all portray or feature the candidates in the same way.
+
+The article also presents actual images from news posts, allowing readers to observe differences in visual representation.
+
+## 3. How Visualizations Support the Story
+
+The article uses different types of visualizations to make complex data easier to understand. Rather than simply presenting numbers, the author uses chats, colors and real image to guide the readers through the story .
+
+### 3.1 Stacked Area Chart
+
+The author uses a stacked area chart to show the percentage of Facebook posts featuring Trump, Clinton, or both throughtout the election period.
+
+This chart allows readers to observe how median coverage change over time. Annotations highlights major political events, such as presidential debates, helping readers connect peaks in the data to real world events.
+
+However, stacked area chart can make comparisons difficult because the categories do not share the same baseline. For example, the blue area representing Clinton may initially appear larger even when Trump's share is higher.  Readers need to compare the thickness of each area rather than the height of its upper boundary.
+
+### 3.2 Paired Dot Plot
+
+The paired dot plot then shifts the focus from what news outlets posted to what readers shared. Each row connects two dots for the same outlet, making it easy to see which candidate's posts received more shares and how large the gap was. The gap favors Trump at UPROXX and Clinton at Newsday. Keeping the same colors for both candidates helps readers follow the comparison as the article moves from coverage to audience response.
+
+### 3.3 Real Images
+The article also includes actual images from Facebook posts to illustrate how news organizations visually represented the two candidates.
+
+These examples connect the numerical findings to real media content.
+
+## 4. What we learned
+
+The article shows how one finding can lead to the next question. After showing how often each candidate appeared in Facebook posts, the author asks how often readers shared those posts. We can use a similar sequence in our hotel cancellation project. We can start with the overall cancellation rate, then look at how it varies with booking lead time, and finally compare that relationship between city and resort hotels.
+
+The article also shows how consistent colors and annotations help readers follow a story across charts. We can use the same color for each hotel type throughout the report and label any lead-time ranges where the cancellation rates differ noticeably. We can also define booking lead time as the number of days between booking and the scheduled arrival date so readers know how to interpret the horizontal axis.
+
+The stacked area chart makes peaks in overall coverage easy to see, but its upper bands are harder to compare because they start from different baselines. Since our goal is to compare cancellation rates at the same lead times, we can plot city and resort hotels as
+
+
+
+

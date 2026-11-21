@@ -1,5 +1,98 @@
 ---
-title: "Member 2 First Name & Last Name Initial"
+title: "Member 2 JL"
 ---
 
-Your exploratory data analysis of the team datasets go here.
+## U.S. Baby Name Trends, 2021–2025
+
+How stable were the top 100 U.S. baby names from 2021 to 2025?
+
+I use [national baby name data from the U.S. Social Security Administration](https://www.ssa.gov/oact/babynames/limits.html). Each row reports the number of babies for one combination of name, recorded sex, and birth year. The five annual files contain 158,942 rows in total.
+
+```{r}
+library(tidyverse)
+
+baby_names <- map(2021:2025, function(year) {
+  read_csv(
+    paste0("../data/names/yob", year, ".txt"),
+    col_names = c("name", "sex", "births"),
+    col_types = "cci"
+  ) |>
+    mutate(year = year)
+}) |>
+  list_rbind()
+
+glimpse(baby_names)
+```
+
+## Top 100 Baby Names by Year
+
+I combine the counts for boys and girls with the same name within each year. Then I rank names by their total counts and keep the top 100 for each year.
+
+```{r}
+top100_by_year <- baby_names |>
+  group_by(year, name) |>
+  summarize(total_births = sum(births), .groups = "drop") |>
+  group_by(year) |>
+  arrange(desc(total_births), name, .by_group = TRUE) |>
+  slice_head(n = 100) |>
+  mutate(rank = row_number()) |>
+  ungroup()
+
+top100_by_year |>
+  count(year)
+```
+
+## How Stable Were the Top 100 Names?
+
+I count how many years each name appeared in the top 100 from 2021 to 2025.
+
+```{r}
+name_appearances <- top100_by_year |>
+  count(name, name = "years_in_top100")
+
+stability_summary <- name_appearances |>
+  count(years_in_top100, name = "number_of_names")
+
+stability_summary
+```
+
+```{r}
+ggplot(stability_summary, aes(x = factor(years_in_top100),
+                              y = number_of_names)) +
+  geom_col(fill = "#C75683", width = 0.7) +
+  geom_text(aes(label = number_of_names), vjust = -0.4) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
+  labs(
+    title = "Most Top 100 Baby Names Stayed on the List All Five Years",
+    x = "Number of years in the top 100 (2021–2025)",
+    y = "Number of names"
+  ) +
+  theme_minimal()
+```
+
+Of the 119 distinct names that made the top 100 at least once, 83 (about 70%) appeared in all five years. Only 10 names appeared in just one year.
+
+## Comparing the 2021 and 2025 Top 100 Lists
+
+```{r}
+names_2021 <- top100_by_year |>
+  filter(year == 2021) |>
+  pull(name)
+
+names_2025 <- top100_by_year |>
+  filter(year == 2025) |>
+  pull(name)
+
+shared_names <- intersect(names_2021, names_2025)
+
+length(shared_names)
+```
+The 2021 and 2025 top 100 lists shared 83 of their 100 names. All 83 also appeared in the top 100 in each intervening year. The remaining 17 names on the 2025 list were outside the top 100 in 2021.
+
+
+## Limitations and Next Steps
+
+I measure stability by how many years a name appeared in the top 100. A name can appear in all five years and still move considerably up or down in rank.
+
+For the group project, we can add up the counts for each baby name across 2021–2025 to create one national top 100 list. Then we can compare the percentage of registered Seattle cats and the percentage of registered Seattle dogs whose names appear on that list.
+
